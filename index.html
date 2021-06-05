@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Calculadora</title>
+	<style type="text/css">
+		input[name="calculo"]{
+			margin-top: 8%;
+			width: 40px;
+		}
+		.container{
+			width: 50%;
+			margin-right: auto;
+			margin-left: auto;
+			margin-bottom: 15px;
+			border: 1px solid #000;
+			padding:12px 17px 12px 17px;
+		}
+		.centro{
+			text-align: center;
+		}
+
+	</style>
+	<script type="text/javascript" language="javascript">
+		
+		function suma(){
+			n1=document.formu.op1.value;
+			n2=document.formu.op2.value;
+			a=parseFloat(n1);
+			b=parseFloat(n2);
+			s=a+b;
+			document.formu.res.value=s;
+		}
+		function resta(){
+			n1=document.formu.op1.value;
+			n2=document.formu.op2.value;
+			a=parseFloat(n1);
+			b=parseFloat(n2);
+			r=a-b;
+			document.formu.res.value=r;
+		}
+		function multiplicacion(){
+			n1=document.formu.op1.value;
+			n2=document.formu.op2.value;
+			a=parseFloat(n1);
+			b=parseFloat(n2);
+			m=a*b;
+			document.formu.res.value=m;
+		}
+		function division(){
+			n1=document.formu.op1.value;
+			n2=document.formu.op2.value;
+			a=parseFloat(n1);
+			b=parseFloat(n2);
+			if(b==0){
+				document.formu.res.value="Imposible";
+			}
+			else{
+				d=a/b;
+				document.formu.res.value=d;
+			}
+		}
+		function factorial(){
+			n1=document.formu.op1.value;
+			a=parseFloat(n1);
+			m=1;
+			for (var i = 1 ; i <= a; i++) {
+				m=i*m;
+			}
+			document.formu.res.value=m;
+		}
+		function exponencial(){
+			n1=document.formu.op1.value;
+			n2=document.formu.op2.value;
+			a=parseFloat(n1);
+			b=parseFloat(n2);
+			p=1;
+			while(b>0){
+				p=p*a;
+				b--;
+			}
+			document.formu.res.value=p;
+		}
+	</script>
+</head>
+<body>
+	<div class="container">
+	<form name="formu">
+		<table border="0" align="center" cellspacing="0" cellpading="0">
+			<tr>
+					<div style="float: right;">
+						<td rowspan="4" style="width: 60px;"><input type="button" name="calculo" value="+" onClick ="suma();"><br>
+						<input type="button" name="calculo" value="-" onClick="resta();"><br>
+						<input type="button" name="calculo" value="*" onClick="multiplicacion();"><br>
+						<input type="button" name="calculo" value="/" onClick="division();"><br>
+						<input type="button" name="calculo" value="!" onClick="factorial();"><br>
+						<input type="button" name="calculo" value="Exp" onClick="exponencial();"><br>
+					</div>
+				</td>
+				<td>X</td>
+				<td><input type="text" name="op1" style="height: 30px;"></td>
+			</tr>
+			<tr>
+				<td>Y</td>
+				<td><input type="text" name="op2" style="height: 30px;"></td>
+			</tr>
+			<tr>
+				<td>Res</td>
+				<td><input type="text" name="res" style="height: 30px;"></td>
+			</tr>
+			<tr>
+				<td colspan="2" class="centro">
+					<input type="button" name="borrar" value="Reset" onClick="reset();">
+					<input type="reset" name="borrar" value="Aceptar" onClick="Aceptar()";>
+				</td>
+			</tr>
+		</table>
+	</form>
+	</div>
+</body>
+</html>
